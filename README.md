@@ -3,10 +3,13 @@
 > HTML Events
 
 ```
+===================================================================
 Window Event Attributes
+===================================================================
 Events triggered for the window object (applies to the <body> tag):
-
+-------------------------------------------------------------------
 Attribute	Value	Description
+-------------------------------------------------------------------
 onafterprint	script	Script to be run after the document is printed
 onbeforeprint	script	Script to be run before the document is printed
 onbeforeunload	script	Script to be run when the document is about to be unloaded
@@ -22,11 +25,13 @@ onpopstate	script	Script to be run when the window's history changes
 onresize	script	Fires when the browser window is resized
 onstorage	script	Script to be run when a Web Storage area is updated
 onunload	script	Fires once a page has unloaded (or the browser window has been closed)
-
+===================================================================
 Form Events
+===================================================================
 Events triggered by actions inside a HTML form (applies to almost all HTML elements, but is most used in form elements):
-
+-------------------------------------------------------------------
 Attribute	Value	Description
+-------------------------------------------------------------------
 onblur	script	Fires the moment that the element loses focus
 onchange	script	Fires the moment when the value of the element is changed
 oncontextmenu	script	Script to be run when a context menu is triggered
@@ -37,13 +42,19 @@ onreset	script	Fires when the Reset button in a form is clicked
 onsearch	script	Fires when the user writes something in a search field (for <input="search">)
 onselect	script	Fires after some text has been selected in an element
 onsubmit	script	Fires when a form is submitted
+===================================================================
 Keyboard Events
+===================================================================
 Attribute	Value	Description
+-------------------------------------------------------------------
 onkeydown	script	Fires when a user is pressing a key
 onkeypress	script	Fires when a user presses a key
 onkeyup	script	Fires when a user releases a key
+===================================================================
 Mouse Events
+===================================================================
 Attribute	Value	Description
+-------------------------------------------------------------------
 onclick	script	Fires on a mouse click on the element
 ondblclick	script	Fires on a mouse double-click on the element
 onmousedown	script	Fires when a mouse button is pressed down on an element
@@ -53,8 +64,11 @@ onmouseover	script	Fires when the mouse pointer moves over an element
 onmouseup	script	Fires when a mouse button is released over an element
 onmousewheel	script	Deprecated. Use the onwheel attribute instead
 onwheel	script	Fires when the mouse wheel rolls up or down over an element
+===================================================================
 Drag Events
+===================================================================
 Attribute	Value	Description
+-------------------------------------------------------------------
 ondrag	script	Script to be run when an element is dragged
 ondragend	script	Script to be run at the end of a drag operation
 ondragenter	script	Script to be run when an element has been dragged to a valid drop target
@@ -63,17 +77,22 @@ ondragover	script	Script to be run when an element is being dragged over a valid
 ondragstart	script	Script to be run at the start of a drag operation
 ondrop	script	Script to be run when dragged element is being dropped
 onscroll	script	Script to be run when an element's scrollbar is being scrolled
+===================================================================
 Clipboard Events
+===================================================================
 Attribute	Value	Description
+-------------------------------------------------------------------
 oncopy	script	Fires when the user copies the content of an element
 oncut	script	Fires when the user cuts the content of an element
 onpaste	script	Fires when the user pastes some content in an element
+===================================================================
 Media Events
+===================================================================
 Events triggered by medias like videos, images and audio (applies to all HTML elements, but is most common in media elements, like <audio>, <embed>, <img>, <object>, and <video>).
-
 Tip: Look at our HTML Audio and Video DOM Reference for more information.
-
+-------------------------------------------------------------------
 Attribute	Value	Description
+-------------------------------------------------------------------
 onabort	script	Script to be run on abort
 oncanplay	script	Script to be run when a file is ready to start playing (when it has buffered enough to begin)
 oncanplaythrough	script	Script to be run when a file can be played all the way to the end without pausing for buffering
@@ -97,8 +116,11 @@ onsuspend	script	Script to be run when fetching the media data is stopped before
 ontimeupdate	script	Script to be run when the playing position has changed (like when the user fast forwards to a different point in the media)
 onvolumechange	script	Script to be run each time the volume is changed which (includes setting the volume to "mute")
 onwaiting	script	Script to be run when the media has paused but is expected to resume (like when the media pauses to buffer more data)
+===================================================================
 Misc Events
+===================================================================
 Attribute	Value	Description
+-------------------------------------------------------------------
 onshow	script	Fires when a <menu> element is shown as a context menu
 ontoggle	script	Fires when the user opens or closes the <details> element
 ```
