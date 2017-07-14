@@ -1,7 +1,228 @@
 # XSS-fuzz
 
-> IMG
+> HTML Events
 
-```HTML
- <img onafterprint="javascript:console.log('img-window-onafterprint');" onbeforeprint="javascript:console.log('img-window-onbeforeprint');" onbeforeunload="javascript:console.log('img-window-onbeforeunload');" onerror="javascript:console.log('img-window-onerror');" onhashchange="javascript:console.log('img-window-onhashchange');" onload="javascript:console.log('img-window-onload');" onmessage="javascript:console.log('img-window-onmessage');" onoffline="javascript:console.log('img-window-onoffline');" ononline="javascript:console.log('img-window-ononline');" onpagehide="javascript:console.log('img-window-onpagehide');" onpageshow="javascript:console.log('img-window-onpageshow');" onpopstate="javascript:console.log('img-window-onpopstate');" onresize="javascript:console.log('img-window-onresize');" onstorage="javascript:console.log('img-window-onstorage');" onunload="javascript:console.log('img-window-onunload');" onblur="javascript:console.log('img-form-events-onblur');" onchange="javascript:console.log('img-form-events-onchange');" oncontextmenu="javascript:console.log('img-form-events-oncontextmenu');" onfocus="javascript:console.log('img-form-events-onfocus');" oninput="javascript:console.log('img-form-events-oninput');" oninvalid="javascript:console.log('img-form-events-oninvalid');" onreset="javascript:console.log('img-form-events-onreset');" onsearch="javascript:console.log('img-form-events-onsearch');" onselect="javascript:console.log('img-form-events-onselect');" onsubmit="javascript:console.log('img-form-events-onsubmit');" onkeydown="javascript:console.log('img-keyboard-events-onkeydown');" onkeypress="javascript:console.log('img-keyboard-events-onkeypress');" onkeyup="javascript:console.log('img-keyboard-events-onkeyup');" onclick="javascript:console.log('img-mouse-events-onclick');" ondblclick="javascript:console.log('img-mouse-events-ondblclick');" onmousedown="javascript:console.log('img-mouse-events-onmousedown');" onmousemove="javascript:console.log('img-mouse-events-onmousemove');" onmouseout="javascript:console.log('img-mouse-events-onmouseout');" onmouseover="javascript:console.log('img-mouse-events-onmouseover');" onmouseup="javascript:console.log('img-mouse-events-onmouseup');" onmousewheel="javascript:console.log('img-mouse-events-onmousewheel');" onwheel="javascript:console.log('img-mouse-events-onwheel');" ondrag="javascript:console.log('img-drag-ondrag');" ondragend="javascript:console.log('img-drag-ondragend');" ondragenter="javascript:console.log('img-drag-ondragenter');" ondragleave="javascript:console.log('img-drag-ondragleave');" ondragover="javascript:console.log('img-drag-ondragover');" ondragstart="javascript:console.log('img-drag-ondragstart');" ondrop="javascript:console.log('img-drag-ondrop');" onscroll="javascript:console.log('img-drag-onscroll');" oncopy="javascript:console.log('img-clipboard-oncopy');" oncut="javascript:console.log('img-clipboard-oncut');" onpaste="javascript:console.log('img-clipboard-onpaste');" onabort="javascript:console.log('img-media-onabort');" oncanplay="javascript:console.log('img-media-oncanplay');" oncanplaythrough="javascript:console.log('img-media-oncanplaythrough');" oncuechange="javascript:console.log('img-media-oncuechange');" ondurationchange="javascript:console.log('img-media-ondurationchange');" onemptied="javascript:console.log('img-media-onemptied');" onended="javascript:console.log('img-media-onended');" onerror="javascript:console.log('img-media-onerror');" onloadeddata="javascript:console.log('img-media-onloadeddata');" onloadedmetadata="javascript:console.log('img-media-onloadedmetadata');" onloadstart="javascript:console.log('img-media-onloadstart');" onpause="javascript:console.log('img-media-onpause');" onplay="javascript:console.log('img-media-onplay');" onplaying="javascript:console.log('img-media-onplaying');" onprogress="javascript:console.log('img-media-onprogress');" onratechange="javascript:console.log('img-media-onratechange');" onseeked="javascript:console.log('img-media-onseeked');" onseeking="javascript:console.log('img-media-onseeking');" onstalled="javascript:console.log('img-media-onstalled');" onsuspend="javascript:console.log('img-media-onsuspend');" ontimeupdate="javascript:console.log('img-media-ontimeupdate');" onvolumechange="javascript:console.log('img-media-onvolumechange');" onwaiting="javascript:console.log('img-media-onwaiting');" onshow="javascript:console.log('img-misc-onshow');" ontoggle="javascript:console.log('img-misc-ontoggle');"/>
+```
+Window Event Attributes
+Events triggered for the window object (applies to the <body> tag):
+
+Attribute	Value	Description
+onafterprint	script	Script to be run after the document is printed
+onbeforeprint	script	Script to be run before the document is printed
+onbeforeunload	script	Script to be run when the document is about to be unloaded
+onerror	script	Script to be run when an error occurs
+onhashchange	script	Script to be run when there has been changes to the anchor part of the a URL
+onload	script	Fires after the page is finished loading
+onmessage	script	Script to be run when the message is triggered
+onoffline	script	Script to be run when the browser starts to work offline
+ononline	script	Script to be run when the browser starts to work online
+onpagehide	script	Script to be run when a user navigates away from a page
+onpageshow	script	Script to be run when a user navigates to a page
+onpopstate	script	Script to be run when the window's history changes
+onresize	script	Fires when the browser window is resized
+onstorage	script	Script to be run when a Web Storage area is updated
+onunload	script	Fires once a page has unloaded (or the browser window has been closed)
+
+Form Events
+Events triggered by actions inside a HTML form (applies to almost all HTML elements, but is most used in form elements):
+
+Attribute	Value	Description
+onblur	script	Fires the moment that the element loses focus
+onchange	script	Fires the moment when the value of the element is changed
+oncontextmenu	script	Script to be run when a context menu is triggered
+onfocus	script	Fires the moment when the element gets focus
+oninput	script	Script to be run when an element gets user input
+oninvalid	script	Script to be run when an element is invalid
+onreset	script	Fires when the Reset button in a form is clicked
+onsearch	script	Fires when the user writes something in a search field (for <input="search">)
+onselect	script	Fires after some text has been selected in an element
+onsubmit	script	Fires when a form is submitted
+Keyboard Events
+Attribute	Value	Description
+onkeydown	script	Fires when a user is pressing a key
+onkeypress	script	Fires when a user presses a key
+onkeyup	script	Fires when a user releases a key
+Mouse Events
+Attribute	Value	Description
+onclick	script	Fires on a mouse click on the element
+ondblclick	script	Fires on a mouse double-click on the element
+onmousedown	script	Fires when a mouse button is pressed down on an element
+onmousemove	script	Fires when the mouse pointer is moving while it is over an element
+onmouseout	script	Fires when the mouse pointer moves out of an element
+onmouseover	script	Fires when the mouse pointer moves over an element
+onmouseup	script	Fires when a mouse button is released over an element
+onmousewheel	script	Deprecated. Use the onwheel attribute instead
+onwheel	script	Fires when the mouse wheel rolls up or down over an element
+Drag Events
+Attribute	Value	Description
+ondrag	script	Script to be run when an element is dragged
+ondragend	script	Script to be run at the end of a drag operation
+ondragenter	script	Script to be run when an element has been dragged to a valid drop target
+ondragleave	script	Script to be run when an element leaves a valid drop target
+ondragover	script	Script to be run when an element is being dragged over a valid drop target
+ondragstart	script	Script to be run at the start of a drag operation
+ondrop	script	Script to be run when dragged element is being dropped
+onscroll	script	Script to be run when an element's scrollbar is being scrolled
+Clipboard Events
+Attribute	Value	Description
+oncopy	script	Fires when the user copies the content of an element
+oncut	script	Fires when the user cuts the content of an element
+onpaste	script	Fires when the user pastes some content in an element
+Media Events
+Events triggered by medias like videos, images and audio (applies to all HTML elements, but is most common in media elements, like <audio>, <embed>, <img>, <object>, and <video>).
+
+Tip: Look at our HTML Audio and Video DOM Reference for more information.
+
+Attribute	Value	Description
+onabort	script	Script to be run on abort
+oncanplay	script	Script to be run when a file is ready to start playing (when it has buffered enough to begin)
+oncanplaythrough	script	Script to be run when a file can be played all the way to the end without pausing for buffering
+oncuechange	script	Script to be run when the cue changes in a <track> element
+ondurationchange	script	Script to be run when the length of the media changes
+onemptied	script	Script to be run when something bad happens and the file is suddenly unavailable (like unexpectedly disconnects)
+onended	script	Script to be run when the media has reach the end (a useful event for messages like "thanks for listening")
+onerror	script	Script to be run when an error occurs when the file is being loaded
+onloadeddata	script	Script to be run when media data is loaded
+onloadedmetadata	script	Script to be run when meta data (like dimensions and duration) are loaded
+onloadstart	script	Script to be run just as the file begins to load before anything is actually loaded
+onpause	script	Script to be run when the media is paused either by the user or programmatically
+onplay	script	Script to be run when the media is ready to start playing
+onplaying	script	Script to be run when the media actually has started playing
+onprogress	script	Script to be run when the browser is in the process of getting the media data
+onratechange	script	Script to be run each time the playback rate changes (like when a user switches to a slow motion or fast forward mode)
+onseeked	script	Script to be run when the seeking attribute is set to false indicating that seeking has ended
+onseeking	script	Script to be run when the seeking attribute is set to true indicating that seeking is active
+onstalled	script	Script to be run when the browser is unable to fetch the media data for whatever reason
+onsuspend	script	Script to be run when fetching the media data is stopped before it is completely loaded for whatever reason
+ontimeupdate	script	Script to be run when the playing position has changed (like when the user fast forwards to a different point in the media)
+onvolumechange	script	Script to be run each time the volume is changed which (includes setting the volume to "mute")
+onwaiting	script	Script to be run when the media has paused but is expected to resume (like when the media pauses to buffer more data)
+Misc Events
+Attribute	Value	Description
+onshow	script	Fires when a <menu> element is shown as a context menu
+ontoggle	script	Fires when the user opens or closes the <details> element
+```
+
+> HTML Tags
+```
+<!-->
+<!DOCTYPE>
+<a>
+<abbr>
+<acronym>
+<address>
+<applet>
+<area>
+<article>
+<aside>
+<audio>
+<b>
+<base>
+<basefont>
+<bdi>
+<bdo>
+<big>
+<blockquote>
+<body>
+<br>
+<button>
+<canvas>
+<caption>
+<center>
+<cite>
+<code>
+<col>
+<colgroup>
+<data>
+<datalist>
+<dd>
+<del>
+<details>
+<dfn>
+<dialog>
+<dir>
+<div>
+<dl>
+<dt>
+<em>
+<embed>
+<fieldset>
+<figcaption>
+<figure>
+<font>
+<footer>
+<form>
+<frame>
+<frameset>
+<h1> - <h6>
+<head>
+<header>
+<hr>
+<html>
+<i>
+<iframe>
+<img>
+<input>
+<ins>
+<kbd>
+<keygen>
+<label>
+<legend>
+<li>
+<link>
+<main>
+<map>
+<mark>
+<menu>
+<menuitem>
+<meta>
+<meter>
+<nav>
+<noframes>
+<noscript>
+<object>
+<ol>
+<optgroup>
+<option>
+<output>
+<p>
+<param>
+<picture>
+<pre>
+<progress>
+<q>
+<rp>
+<rt>
+<ruby>
+<s>
+<samp>
+<script>
+<section>
+<select>
+<small>
+<source>
+<span>
+<strike>
+<strong>
+<style>
+<sub>
+<summary>
+<sup>
+<table>
+<tbody>
+<td>
+<textarea>
+<tfoot>
+<th>
+<thead>
+<time>
+<title>
+<tr>
+<track>
+<tt>
+<u>
+<ul>
+<var>
+<video>
+<wbr>
 ```
