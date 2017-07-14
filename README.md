@@ -1,6 +1,5 @@
 # XSS-fuzz
 
----
 > IMG
 
 ```HTML
